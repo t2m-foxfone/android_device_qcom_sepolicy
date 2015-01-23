@@ -1,0 +1,38 @@
+# root_check ----------------------
+type factory_test, domain;
+type factory_test_exec, exec_type, file_type;
+
+init_daemon_domain(factory_test)
+
+#for tunning backup
+allow factory_test modem_efs_partition_device:blk_file { read write open getattr };
+allow factory_test cache_file:dir { add_name write remove_name rmdir create };
+allow factory_test cache_file:file { unlink create write open };
+allow factory_test self:process execmem;
+
+allow factory_test self:capability dac_override;
+allow factory_test smem_log_device:chr_file { read write };
+
+allow factory_test self:socket create;
+allow factory_test shell_exec:file execute;
+allow factory_test smem_log_device:chr_file open;
+allow factory_test smem_log_device:chr_file ioctl;
+allow factory_test self:socket ioctl;
+allow factory_test shell_exec:file { read open };
+allow factory_test self:socket write;
+allow factory_test shell_exec:file execute_no_trans;
+allow factory_test self:socket read;
+allow factory_test system_file:file execute_no_trans;
+allow factory_test system_data_file:dir write;
+allow factory_test system_data_file:dir add_name;
+allow factory_test system_data_file:dir create;
+allow factory_test system_data_file:dir read;
+allow factory_test system_data_file:file create;
+allow factory_test system_data_file:file write;
+allow factory_test system_data_file:file read;
+allow factory_test system_data_file:dir open;
+allow factory_test system_data_file:file open;
+allow factory_test block_device:dir search;
+allow factory_test system_data_file:dir remove_name;
+allow factory_test system_data_file:file unlink;
+allow factory_test system_data_file:dir rmdir;
