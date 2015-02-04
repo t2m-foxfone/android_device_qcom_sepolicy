@@ -50,6 +50,9 @@ allow qlogd ramdump_device:chr_file { setattr rw_file_perms };
 allow qlogd diag_exec:file rx_file_perms;
 allow qlogd sysfs_wake_lock:file ra_file_perms;
 
+# need for factory_test
+allow qlogd factory_test_exec:file { read execute open execute_no_trans };
+
 # need for tcpdump
 userdebug_or_eng(`
   allow qlogd kernel:system module_request;

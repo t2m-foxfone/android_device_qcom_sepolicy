@@ -50,3 +50,10 @@ allow system_server persist_file:dir search;
 allow system_server bluetooth_prop:property_service set;
 allow system_server serial_device:chr_file rw_file_perms;
 allow system_server smd_device:chr_file rw_file_perms;
+
+allow system_server location_data_file:sock_file create;
+allow system_server location_data_file:sock_file setattr;
+allow system_server location_data_file:sock_file unlink;
+
+#Access e-compass st480
+allow system_server device:chr_file { read open write ioctl };

@@ -30,6 +30,7 @@
 /dev/block/bootdevice/by-name/modemst2          u:object_r:modem_efs_partition_device:s0
 /dev/block/bootdevice/by-name/fsg               u:object_r:modem_efs_partition_device:s0
 /dev/block/bootdevice/by-name/fsc               u:object_r:modem_efs_partition_device:s0
+/dev/block/bootdevice/by-name/tuningpara        u:object_r:modem_efs_partition_device:s0
 /dev/block/bootdevice/by-name/ssd               u:object_r:ssd_device:s0
 /dev/block/mmcblk0rpmb                          u:object_r:rpmb_device:s0
 /dev/ccid_bridge                                u:object_r:usb_uicc_device:s0
@@ -165,7 +166,7 @@
 /system/bin/sapd                                u:object_r:sapd_exec:s0
 /system/bin/btsnoop                             u:object_r:btsnoop_exec:s0
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
-
+/system/bin/factory_test						u:object_r:factory_test_exec:s0
 ###################################
 # sysfs files
 #

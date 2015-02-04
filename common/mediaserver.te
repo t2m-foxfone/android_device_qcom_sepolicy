@@ -36,3 +36,4 @@ unix_socket_connect(mediaserver, thermal, thermal-engine)
 
 #allow mediaserver to communicate with timedaemon
 allow mediaserver time_daemon:unix_stream_socket connectto;
+allow mediaserver default_prop:property_service set;
